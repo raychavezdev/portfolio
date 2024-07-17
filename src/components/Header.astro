@@ -1,0 +1,37 @@
+---
+import Container from "./Container.astro"
+---
+
+<header class="bg-black text-white h-16 flex items-center">
+  <Container>
+    <div class="flex justify-between">
+      <div class="text-xl font-bold">
+        <span>Raymundo</span>
+        <span class="text-blue-300"> Dev</span>
+      </div>
+      <nav class="hidden sm:flex">
+        <ul class="flex gap-4">
+          <li>
+            <a href="/">Inicio</a>
+          </li>
+          <li>
+            <a href="#projects">Proyectos</a>
+          </li>
+          <li>
+            <a href="#about">Sobre mi</a>
+          </li>
+          <li>
+            <a href="#contact">Contacto</a>
+          </li>
+        </ul>
+      </nav>
+      <button
+        class="sm:hidden h-8 w-10 flex flex-col justify-around items-center"
+      >
+        <span class="h-1 w-8 bg-white block"></span>
+        <span class="h-1 w-8 bg-white block"></span>
+        <span class="h-1 w-8 bg-white block"></span>
+      </button>
+    </div>
+  </Container>
+</header>
