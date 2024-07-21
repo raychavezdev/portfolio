@@ -9,7 +9,7 @@ import Layout from "../layouts/Layout.astro"
   <Header />
   <main class="text-white">
     <Container>
-      <h1 class="text-clamp tracking-tight font-bold font-oswald pt-6">
+      <h1 class="text-clamp tracking-tight font-bold font-oswald mt-6 -ml-1">
         RAYMUNDO CHAVEZ
       </h1>
       <div class="flex gap-14 text-xs mb-12">
@@ -28,7 +28,21 @@ import Layout from "../layouts/Layout.astro"
           ></button
         >
       </div>
+      <Banner />
+
+      <section id="projects" class="mt-16">
+        <h2 class="text-3xl font-semibold">* Proyectos</h2>
+        <article>
+          <h3 class="my-4 text-xl font-semibold">Hangman Game</h3>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus
+            tempore quisquam nesciunt repudiandae ipsum aliquam accusantium
+            beatae quia! Dicta ad cum deserunt odio, error autem veritatis
+            doloribus qui voluptate excepturi!
+          </p>
+          <img src="/screenshots/hangman.JPG" alt="" />
+        </article>
+      </section>
     </Container>
-    <Banner />
   </main>
 </Layout>

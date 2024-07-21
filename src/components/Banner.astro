@@ -1,19 +1,48 @@
 ---
-import Skill from "./Skill.astro"
+
 ---
 
 <div
-  class="bg-white bg-grid h-72 w-11/12 rounded-r-full grid grid-cols-3 relative -z-10"
+  class="bg-white bg-grid bg-[length:40px_40px] h-72 sm:h-80 rounded-r-full relative -z-10"
 >
-  <img class="w-24 h-24" src="/html.svg" alt="" />
-  <img class="w-24 h-24" src="/css.svg" alt="" />
-  <img class="w-24 h-24" src="/js.svg" alt="" />
-  <img
-    class="filter grayscale h-full absolute top-full -translate-y-full left-1/2 -translate-x-1/2"
-    src="/avatar.png"
-    alt=""
-  />
-  <img class="w-24 h-24" src="/react.svg" alt="" />
-  <img class="w-24 h-24" src="/git.svg" alt="" />
-  <img class="w-24 h-24" src="/php.svg" alt="" />
+  <div
+    class="relative h-full grid-cols-3 mx-auto sm:w-11/12 md:w-10/12 lg:w-8/12 xl:w-6/12"
+  >
+    <img
+      class="filter grayscale h-full object-cover absolute top-full -translate-y-full left-1/2 -translate-x-1/2"
+      src="brands/avatar.png"
+      alt=""
+    />
+    <img
+      class="w-24 h-24 absolute translate-x-14 -translate-y-5 -rotate-12"
+      src="brands/html.svg"
+      alt=""
+    />
+    <img
+      class="w-24 h-24 absolute right-16 top-10 -rotate-6"
+      src="brands/css.svg"
+      alt=""
+    />
+    <img
+      class="w-20 h-20 absolute top-1/2 right-0 rotate-12"
+      src="brands/js.svg"
+      alt=""
+    />
+
+    <img
+      class="w-24 h-24 absolute top-full -translate-y-full translate-x-14 rotate-6"
+      src="brands/react.svg"
+      alt=""
+    />
+    <img
+      class="w-24 h-24 absolute top-1/2 -translate-y-1/2 -rotate-12"
+      src="brands/git.svg"
+      alt=""
+    />
+    <img
+      class="w-24 h-24 absolute bottom-0 right-14 rotate-12"
+      src="brands/php.svg"
+      alt=""
+    />
+  </div>
 </div>

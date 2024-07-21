@@ -11,7 +11,7 @@ export default {
 				'clamp': "clamp(3.5rem,8vw,15rem)"
 			},
 			backgroundImage: {
-				'grid': "repeating-linear-gradient(to right,black 0, black 1px,transparent 1px,transparent 20px),repeating-linear-gradient(to bottom,black 0, black 1px,transparent 1px,transparent 20px)"
+				'grid': "linear-gradient(#000 1px, transparent 1px),linear-gradient(90deg, #000 1px, transparent 1px)"
 			}
 		},
 	},
