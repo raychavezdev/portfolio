@@ -1,0 +1,41 @@
+---
+import Tag from './Tag.astro'
+
+const { title, description, img, tags } = Astro.props
+const arrayTags = tags.split(' ')
+---
+
+<article
+  class="group relative cursor-pointer rounded-lg bg-zinc-800 bg-gradient-to-br from-zinc-800 to-zinc-900/50 p-4 text-gray-200 shadow-sm shadow-gray-900"
+>
+  <img
+    class="rounded-lg shadow-sm shadow-gray-900"
+    src={img}
+    alt=`Screenshot del proyecto ${title}`
+  />
+  <h3 class="mb-2 mt-3 text-xl font-semibold">
+    {title}
+  </h3>
+  <div class="mb-3 flex gap-1">
+    {arrayTags.map((tag: string) => <Tag text={tag} />)}
+  </div>
+  <p class="text-clampDes">
+    {description}
+  </p>
+  <!-- <button class="mt-4 underline ">Ver Proyecto</button> -->
+
+  <div
+    class="absolute left-0 top-0 flex h-full w-full items-center justify-center gap-8 rounded-lg bg-zinc-900/80 opacity-0 transition-opacity group-hover:opacity-100"
+  >
+    <a
+      href="#"
+      class="flex h-14 w-40 items-center justify-center rounded-lg bg-indigo-500 px-4 py-2"
+      >Ver proyecto</a
+    >
+    <a
+      href="#"
+      class="flex h-14 w-40 items-center justify-center rounded-lg bg-slate-700 px-4 py-2"
+      >Github</a
+    >
+  </div>
+</article>

@@ -1,18 +1,52 @@
 ---
-import Banner from "../components/Banner.astro"
-import Container from "../components/Container.astro"
-import Header from "../components/Header.astro"
-import Layout from "../layouts/Layout.astro"
+import Banner from '../components/Banner.astro'
+import Container from '../components/Container.astro'
+import Header from '../components/Header.astro'
+import ProjectCard from '../components/ProjectCard.astro'
+import Layout from '../layouts/Layout.astro'
+
+const PROJECTS = [
+  {
+    title: 'Hangman Game',
+    description:
+      ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, quibusdam Lorem ipsum dolor sit amet.s',
+    img: '/screenshots/hangman.JPG',
+    tags: 'HTML CSS Javascript',
+  },
+  {
+    title: 'Advent JS',
+    description:
+      ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, quibusdam Lorem ipsum dolor sit amet.s',
+    img: '/screenshots/advent.JPG',
+    tags: 'React CSS Javascript',
+  },
+  {
+    title: 'Hangman Game',
+    description:
+      ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, quibusdam Lorem ipsum dolor sit amet.s',
+    img: '/screenshots/hangman.JPG',
+    tags: 'HTML CSS Javascript',
+  },
+  {
+    title: 'Advent JS',
+    description:
+      ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, quibusdam Lorem ipsum dolor sit amet.s',
+    img: '/screenshots/advent.JPG',
+    tags: 'React CSS Javascript',
+  },
+]
 ---
 
 <Layout title="Portfolio Web">
   <Header />
-  <main class="text-white">
+  <main class="pb-96 text-white">
     <Container>
-      <h1 class="text-clamp tracking-tight font-bold font-oswald mt-6 -ml-1">
+      <h1
+        class="-ml-1 mt-6 font-oswald text-clampTitle font-bold tracking-tight"
+      >
         RAYMUNDO CHAVEZ
       </h1>
-      <div class="flex gap-14 text-xs mb-12">
+      <div class="mb-12 flex gap-14 text-clamp">
         <p class="flex-1">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim,
           quibusdam.
@@ -23,25 +57,19 @@ import Layout from "../layouts/Layout.astro"
         </p>
         <button class="flex-1">
           <a
-            class="bg-white text-black underline px-3 py-2 rounded-md"
-            href="#contact">Contactame -></a
-          ></button
+            class="rounded-md bg-white px-3 py-2 text-black underline"
+            href="#contact"
+            >Contactame ➡
+          </a></button
         >
       </div>
       <Banner />
 
       <section id="projects" class="mt-16">
-        <h2 class="text-3xl font-semibold">* Proyectos</h2>
-        <article>
-          <h3 class="my-4 text-xl font-semibold">Hangman Game</h3>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus
-            tempore quisquam nesciunt repudiandae ipsum aliquam accusantium
-            beatae quia! Dicta ad cum deserunt odio, error autem veritatis
-            doloribus qui voluptate excepturi!
-          </p>
-          <img src="/screenshots/hangman.JPG" alt="" />
-        </article>
+        <h2 class="mb-8 text-3xl font-semibold">😶 Proyectos</h2>
+        <div class="grid gap-8 lg:grid-cols-2">
+          {PROJECTS.map((project) => <ProjectCard {...project} />)}
+        </div>
       </section>
     </Container>
   </main>
