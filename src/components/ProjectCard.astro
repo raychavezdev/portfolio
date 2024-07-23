@@ -1,5 +1,7 @@
 ---
 import Tag from './Tag.astro'
+import Eye from '../icons/Eye.astro'
+import Github from '../icons/Github.astro'
 
 const { title, description, img, tags } = Astro.props
 const arrayTags = tags.split(' ')
@@ -29,13 +31,15 @@ const arrayTags = tags.split(' ')
   >
     <a
       href="#"
-      class="flex h-14 w-40 items-center justify-center rounded-lg bg-indigo-500 px-4 py-2"
-      >Ver proyecto</a
+      class="flex h-14 w-40 items-center justify-center gap-2 rounded-lg bg-indigo-500 px-4 py-2 transition-colors hover:bg-indigo-700 lg:w-32 xl:w-40"
+    >
+      <Eye />Ver</a
     >
     <a
       href="#"
-      class="flex h-14 w-40 items-center justify-center rounded-lg bg-slate-700 px-4 py-2"
-      >Github</a
+      class="flex h-14 w-40 items-center justify-center gap-2 rounded-lg bg-slate-700 px-4 py-2 transition-colors hover:bg-slate-800 lg:w-32 xl:w-40"
+    >
+      <Github />Github</a
     >
   </div>
 </article>
