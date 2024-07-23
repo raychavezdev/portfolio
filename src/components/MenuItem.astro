@@ -2,6 +2,20 @@
 const { href, text } = Astro.props
 ---
 
-<li class="px-4 sm:px-0">
-  <a class="inline-block hover:scale-105" href={href}>{text}</a>
+<li class="menu-item px-4 sm:px-0">
+  <a class="menu-item inline-block hover:scale-105" href={href}>{text}</a>
 </li>
+
+<script>
+  const menu = document.getElementById('menu')
+  const header = document.getElementById('header')
+
+  menu?.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement
+    if (target.classList.contains('menu-item')) {
+      header?.classList.remove('fixed')
+      menu.classList.remove('-right-1/3')
+      document.body.classList.remove('pt-16')
+    }
+  })
+</script>
