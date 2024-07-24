@@ -1,0 +1,45 @@
+---
+import Code from '../icons/Code.astro'
+import ProjectCard from './ProjectCard.astro'
+import SubTitle from './SubTitle.astro'
+
+const PROJECTS = [
+  {
+    title: 'Hangman Game',
+    description:
+      ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, quibusdam Lorem ipsum dolor sit amet.s',
+    img: '/screenshots/hangman.JPG',
+    tags: 'HTML CSS Javascript',
+  },
+  {
+    title: 'Advent JS',
+    description:
+      ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, quibusdam Lorem ipsum dolor sit amet.s',
+    img: '/screenshots/advent.JPG',
+    tags: 'React CSS Javascript',
+  },
+  {
+    title: 'Hangman Game',
+    description:
+      ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, quibusdam Lorem ipsum dolor sit amet.s',
+    img: '/screenshots/hangman.JPG',
+    tags: 'HTML CSS Javascript',
+  },
+  {
+    title: 'Advent JS',
+    description:
+      ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, quibusdam Lorem ipsum dolor sit amet.s',
+    img: '/screenshots/advent.JPG',
+    tags: 'React CSS Javascript',
+  },
+]
+---
+
+<section id="projects">
+  <SubTitle>
+    <Code />Proyectos
+  </SubTitle>
+  <div class="grid gap-8 lg:grid-cols-2">
+    {PROJECTS.map((project) => <ProjectCard {...project} />)}
+  </div>
+</section>

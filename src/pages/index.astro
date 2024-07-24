@@ -1,83 +1,21 @@
 ---
-import Banner from '../components/Banner.astro'
 import Container from '../components/Container.astro'
 import Header from '../components/Header.astro'
-import ProjectCard from '../components/ProjectCard.astro'
 import Layout from '../layouts/Layout.astro'
-import Code from '../icons/Code.astro'
 import HomeButton from '../components/HomeButton.astro'
-
-const PROJECTS = [
-  {
-    title: 'Hangman Game',
-    description:
-      ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, quibusdam Lorem ipsum dolor sit amet.s',
-    img: '/screenshots/hangman.JPG',
-    tags: 'HTML CSS Javascript',
-  },
-  {
-    title: 'Advent JS',
-    description:
-      ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, quibusdam Lorem ipsum dolor sit amet.s',
-    img: '/screenshots/advent.JPG',
-    tags: 'React CSS Javascript',
-  },
-  {
-    title: 'Hangman Game',
-    description:
-      ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, quibusdam Lorem ipsum dolor sit amet.s',
-    img: '/screenshots/hangman.JPG',
-    tags: 'HTML CSS Javascript',
-  },
-  {
-    title: 'Advent JS',
-    description:
-      ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, quibusdam Lorem ipsum dolor sit amet.s',
-    img: '/screenshots/advent.JPG',
-    tags: 'React CSS Javascript',
-  },
-]
+import Projects from '../components/Projects.astro'
+import Hero from '../components/Hero.astro'
+import Experience from '../components/Experience.astro'
 ---
 
-<Layout title="Portfolio Web">
+<Layout title="Raymundo Chavez | Portfolio Web">
   <Header />
   <main class="pb-96 text-white">
     <Container>
-      <h1
-        class="-ml-1 mt-6 font-oswald text-clampTitle font-bold tracking-tight"
-      >
-        RAYMUNDO CHAVEZ
-      </h1>
-      <div class="mb-12 flex justify-between gap-4 text-clamp">
-        <p class="flex-1">
-          <span class="font-semibold text-blue-300"
-            >Ingeniero en computacion</span
-          > con experiencia en la creación de sitios web modernos y funcionales.
-        </p>
-        <p class="flex-1">
-          Utilizo mi conocimiento de desarrollo web para transformar ideas
-          creativas en experiencias digitales impresionantes.
-        </p>
-        <button class="flex-1">
-          <a
-            class="rounded-md bg-white px-3 py-2 text-black underline"
-            href="#contact"
-            >Contactame ➡
-          </a></button
-        >
-      </div>
-      <Banner />
-
-      <section id="projects" class="mt-16">
-        <h2 class="mb-8 flex gap-2 text-3xl font-semibold">
-          <Code />Proyectos
-        </h2>
-        <div class="grid gap-8 lg:grid-cols-2">
-          {PROJECTS.map((project) => <ProjectCard {...project} />)}
-        </div>
-      </section>
-
-      <HomeButton />
+      <Hero />
+      <Projects />
+      <Experience />
     </Container>
+    <HomeButton />
   </main>
 </Layout>

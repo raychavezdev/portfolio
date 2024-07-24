@@ -1,0 +1,39 @@
+---
+import Case from '../icons/Case.astro'
+import ExperienceItem from './ExperienceItem.astro'
+import SubTitle from './SubTitle.astro'
+
+const WORKS = [
+  {
+    title: 'Freelance',
+    description: `Desarrollo de páginas web personalizadas, asegurando tanto la funcionalidad técnica como la estética del diseño.`,
+    date: 'Febrero 2024 - Actualmente ',
+  },
+  {
+    title: 'Ingeniero de Pruebas',
+    company: 'Foxconn PCE Paragon Solutions',
+    description: `
+    Responsable de ejecutar pruebas y llevar a cabo mantenimiento preventivo en servidores. Especializado en la creación de scripts en Bash para automatizar procesos y mejorar la eficiencia operativa. Documentación detallada y análisis exhaustivo de resultados de pruebas para garantizar la calidad del producto.
+    `,
+    date: 'Abril 2021 - Actualmente ',
+  },
+]
+---
+
+<section id="experience">
+  <SubTitle>
+    <Case /> Experiencia laboral
+  </SubTitle>
+  <ul class="border-l border-l-white py-4 pl-4">
+    {
+      WORKS.map(({ title, description, company, date }) => (
+        <ExperienceItem
+          title={title}
+          description={description}
+          company={company}
+          date={date}
+        />
+      ))
+    }
+  </ul>
+</section>
