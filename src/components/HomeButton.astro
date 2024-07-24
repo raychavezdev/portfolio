@@ -1,0 +1,27 @@
+---
+import ArrowUp from '../icons/ArrowUp.astro'
+---
+
+<a
+  id="btn-home"
+  href="#"
+  class="pointer-events-none fixed bottom-10 right-1 flex size-14 items-center justify-center rounded-full bg-zinc-800 p-4 text-2xl opacity-0 transition-opacity sm:right-10 sm:size-16"
+>
+  <ArrowUp />
+</a>
+
+<script>
+  const btnHome = document.getElementById('btn-home')
+
+  window.addEventListener('scroll', () => {
+    const scroll = window.scrollY
+
+    if (scroll > 100) {
+      btnHome?.classList.remove('opacity-0')
+      btnHome?.classList.remove('pointer-events-none')
+    } else {
+      btnHome?.classList.add('opacity-0')
+      btnHome?.classList.add('pointer-events-none')
+    }
+  })
+</script>
