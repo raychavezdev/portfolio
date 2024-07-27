@@ -3,16 +3,17 @@ import Container from '../components/Container.astro'
 import Header from '../components/Header.astro'
 import Layout from '../layouts/Layout.astro'
 import HomeButton from '../components/HomeButton.astro'
-import Projects from '../components/Projects.astro'
-import Hero from '../components/Hero.astro'
-import Experience from '../components/Experience.astro'
+import Projects from '../components/projects/Projects.astro'
+import Hero from '../components/hero/Hero.astro'
+import Experience from '../components/experience/Experience.astro'
 import About from '../components/About.astro'
-import Contact from '../components/Contact.astro'
+import Footer from '../components/Footer.astro'
+import Contact from '../components/contact/Contact.astro'
 ---
 
 <Layout title="Raymundo Chavez | Portfolio Web">
   <Header />
-  <main class="pb-96 text-white">
+  <main class="text-white">
     <Container>
       <Hero />
       <Projects />
@@ -20,6 +21,7 @@ import Contact from '../components/Contact.astro'
       <About />
       <Contact />
     </Container>
+    <Footer />
     <HomeButton />
   </main>
 </Layout>

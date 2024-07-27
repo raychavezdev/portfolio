@@ -14,7 +14,7 @@ const commonStyles =
         class={` ${commonStyles}`}
         placeholder=""
       />
-      <Label>{text}</Label>
+      <Label forHTML={forHTML}>{text}</Label>
     </div>
   ) : (
     <div class="relative flex flex-1 flex-col">
@@ -23,7 +23,7 @@ const commonStyles =
         class={`h-32 resize-none ${commonStyles}`}
         placeholder=""
       />
-      <Label>{text}</Label>
+      <Label forHTML={forHTML}>{text}</Label>
     </div>
   )
 }

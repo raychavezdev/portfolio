@@ -1,10 +1,11 @@
 ---
-import Github from '../icons/Github.astro'
-import Instagram from '../icons/Instagram.astro'
-import Linkedin from '../icons/Linkedin.astro'
-import Mail from '../icons/Mail.astro'
-import FormItem from './FormItem.astro'
-import SubTitle from './SubTitle.astro'
+import Github from '../../icons/Github.astro'
+import Instagram from '../../icons/Instagram.astro'
+import Linkedin from '../../icons/Linkedin.astro'
+import Mail from '../../icons/Mail.astro'
+import FormItem from '../contact/FormItem.astro'
+import SubTitle from '../SubTitle.astro'
+import Social from './Social.astro'
 ---
 
 <section id="contact">
@@ -25,15 +26,15 @@ import SubTitle from './SubTitle.astro'
   </div>
   <footer class="mt-8 border-t border-t-gray-300 text-gray-300">
     <ul class="class= flex justify-center gap-6 pt-4">
-      <li>
+      <Social>
         <Linkedin w="35" h="35" />
-      </li>
-      <li>
+      </Social>
+      <Social>
         <Github w="35" h="35" />
-      </li>
-      <li>
+      </Social>
+      <Social>
         <Instagram w="35" h="35" />
-      </li>
+      </Social>
     </ul>
   </footer>
 </section>
