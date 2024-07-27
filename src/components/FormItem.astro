@@ -1,0 +1,29 @@
+---
+import Label from './Label.astro'
+const { forHTML, type, text } = Astro.props
+const commonStyles =
+  'peer border-2 border-gray-400 bg-transparent py-2 pl-2 text-gray-100 outline-none focus:border-blue-300'
+---
+
+{
+  forHTML !== 'message' ? (
+    <div class="relative flex flex-1 flex-col">
+      <input
+        type={type}
+        id={forHTML}
+        class={` ${commonStyles}`}
+        placeholder=""
+      />
+      <Label>{text}</Label>
+    </div>
+  ) : (
+    <div class="relative flex flex-1 flex-col">
+      <textarea
+        id={forHTML}
+        class={`h-32 resize-none ${commonStyles}`}
+        placeholder=""
+      />
+      <Label>{text}</Label>
+    </div>
+  )
+}

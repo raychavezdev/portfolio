@@ -14,7 +14,7 @@ const { href, text } = Astro.props
     const target = e.target as HTMLElement
     if (target.classList.contains('menu-item')) {
       header?.classList.remove('fixed')
-      menu.classList.remove('-right-2/4')
+      menu.classList.remove('-right-1/2')
       document.body.classList.remove('pt-16')
     }
   })
