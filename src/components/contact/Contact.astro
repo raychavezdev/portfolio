@@ -21,11 +21,17 @@ import Social from './Social.astro'
         <FormItem type="email" forHTML="email" text="Correo" />
       </div>
       <FormItem forHTML="message" text="Mensaje" />
-      <button type="submit" class="rounded-md bg-blue-600 py-2">Enviar</button>
+      <button
+        type="submit"
+        class="rounded-md bg-blue-500 py-2 text-gray-100 hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700"
+        >Enviar</button
+      >
     </form>
   </div>
   <footer class="mt-8 border-t border-t-gray-300 text-gray-300">
-    <ul class="class= flex justify-center gap-6 pt-4">
+    <ul
+      class="class= flex justify-center gap-6 pt-4 text-gray-900 dark:text-gray-300"
+    >
       <Social>
         <Linkedin w="35" h="35" />
       </Social>

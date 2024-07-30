@@ -8,7 +8,7 @@ export default {
         oswald: ['Oswald', 'sans-serif'],
       },
       fontSize: {
-        clampTitle: 'clamp(3.45rem,8vw,14.5rem)',
+        clampTitle: 'clamp(3.25rem,8vw,14.5rem)',
         clamp: 'clamp(.75rem,2vw,.9rem)',
         clampDes: 'clamp(.9rem,2vw,1rem)',
       },
@@ -18,4 +18,5 @@ export default {
     },
   },
   plugins: [],
+  darkMode: 'class',
 }

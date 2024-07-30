@@ -1,0 +1,23 @@
+---
+import Moon from '../../icons/Moon.astro'
+import Sun from '../../icons/Sun.astro'
+import MenuItem from './MenuItem.astro'
+---
+
+<MenuItem>
+  <div id="toggleTheme">
+    <Sun />
+    <Moon />
+  </div>
+</MenuItem>
+
+<script>
+  const btn = document.querySelector('.menu-item:nth-child(5)')
+  const moon = document.querySelector('.moon')
+  const sun = document.querySelector('.sun')
+  btn?.addEventListener('click', () => {
+    document.documentElement.classList.toggle('dark')
+    moon?.classList.toggle('hidden')
+    sun?.classList.toggle('hidden')
+  })
+</script>

@@ -1,9 +1,12 @@
 ---
-const { href, text } = Astro.props
+const { href } = Astro.props
 ---
 
 <li class="menu-item px-4 sm:px-0">
-  <a class="menu-item inline-block hover:scale-105" href={href}>{text}</a>
+  <a
+    class="menu-link inline-block hover:scale-105 hover:text-blue-500 dark:hover:text-blue-300"
+    href={href}><slot /></a
+  >
 </li>
 
 <script>
@@ -12,9 +15,11 @@ const { href, text } = Astro.props
 
   menu?.addEventListener('click', (e) => {
     const target = e.target as HTMLElement
-    if (target.classList.contains('menu-item')) {
+    if (target.classList.contains('menu-link')) {
       header?.classList.remove('fixed')
       menu.classList.remove('-right-1/2')
+      menu?.classList.toggle('-right-full')
+      menu?.classList.toggle('text-base')
       document.body.classList.remove('pt-16')
     }
   })

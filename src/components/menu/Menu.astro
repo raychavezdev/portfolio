@@ -1,25 +1,26 @@
 ---
 import MenuItem from './MenuItem.astro'
+import ThemeButton from './ThemeButton.astro'
 ---
 
 <nav>
   <ul
     id="menu"
-    class="fixed -right-full top-16 z-10 flex h-full w-full flex-col gap-4 border-l border-l-white bg-black py-4 transition-all sm:static sm:flex-row sm:border-none"
+    class="fixed -right-full top-16 z-10 flex h-full w-full flex-col gap-3 border-l border-l-gray-950 bg-gray-200 py-4 text-sm transition-all dark:border-l-white dark:bg-black sm:static sm:flex-row sm:border-none sm:bg-transparent sm:dark:bg-transparent md:text-base"
   >
-    <MenuItem href="#projects" text="Proyectos" />
-    <MenuItem href="#experience" text="Experiencia" />
-
-    <MenuItem href="#about" text="Sobre mi" />
-    <MenuItem href="#contact" text="Contacto" />
+    <MenuItem href="#projects">Proyectos</MenuItem>
+    <MenuItem href="#experience">Experiencia</MenuItem>
+    <MenuItem href="#about">Sobre mi</MenuItem>
+    <MenuItem href="#contact">Contacto</MenuItem>
+    <ThemeButton theme="dark" onclick="" />
   </ul>
   <button
     id="toggle-menu"
     class="flex h-8 w-10 flex-col items-center justify-around sm:hidden"
   >
-    <span class="block h-1 w-8 bg-white"></span>
-    <span class="block h-1 w-8 bg-white"></span>
-    <span class="block h-1 w-8 bg-white"></span>
+    <span class="block h-1 w-8 bg-gray-950 dark:bg-gray-100"></span>
+    <span class="block h-1 w-8 bg-gray-950 dark:bg-gray-100"></span>
+    <span class="block h-1 w-8 bg-gray-950 dark:bg-gray-100"></span>
   </button>
 </nav>
 
@@ -29,6 +30,8 @@ import MenuItem from './MenuItem.astro'
   const header = document.getElementById('header')
   toggleMenu?.addEventListener('click', () => {
     menu?.classList.toggle('-right-1/2')
+    menu?.classList.toggle('-right-full')
+    menu?.classList.toggle('text-base')
     header?.classList.toggle('fixed')
     document.body.classList.toggle('pt-16')
   })
