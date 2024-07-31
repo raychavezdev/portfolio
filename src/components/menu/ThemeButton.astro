@@ -15,9 +15,28 @@ import MenuItem from './MenuItem.astro'
   const btn = document.querySelector('.menu-item:nth-child(5)')
   const moon = document.querySelector('.moon')
   const sun = document.querySelector('.sun')
-  btn?.addEventListener('click', () => {
+
+  const toggleTheme = () => {
+    const currentTheme = document.documentElement.classList.contains('dark')
+      ? 'dark'
+      : 'light'
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark'
     document.documentElement.classList.toggle('dark')
     moon?.classList.toggle('hidden')
     sun?.classList.toggle('hidden')
-  })
+    localStorage.setItem('theme', newTheme)
+  }
+
+  const applyStoredTheme = () => {
+    const storedTheme = localStorage.getItem('theme')
+
+    if (storedTheme) {
+      document.documentElement.classList.toggle('dark', storedTheme === 'dark')
+    } else {
+      document.documentElement.classList.add('dark')
+    }
+  }
+
+  applyStoredTheme()
+  btn?.addEventListener('click', toggleTheme)
 </script>

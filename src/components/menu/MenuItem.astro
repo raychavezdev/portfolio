@@ -21,6 +21,15 @@ const { href } = Astro.props
       menu?.classList.toggle('-right-full')
       menu?.classList.toggle('text-base')
       document.body.classList.remove('pt-16')
+
+      // -----------------------------------------
+      const toggleMenu = document.getElementById('toggle-menu')
+
+      toggleMenu.children[0].classList.toggle('top-1')
+      toggleMenu.children[0].classList.toggle('rotate-45')
+      toggleMenu.children[1].classList.toggle('hidden')
+      toggleMenu.children[2].classList.toggle('bottom-1')
+      toggleMenu.children[2].classList.toggle('-rotate-45')
     }
   })
 </script>
