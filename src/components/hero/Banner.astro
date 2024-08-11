@@ -1,44 +1,52 @@
+---
+import Skill from './Skill.astro'
+---
+
 <div
   class="relative -z-10 h-72 rounded-r-full bg-white bg-grid bg-[length:40px_40px] sm:h-80"
 >
   <div
     class="relative mx-auto h-full grid-cols-3 sm:w-11/12 md:w-10/12 lg:w-8/12 xl:w-6/12"
   >
-    <img
-      class="absolute left-1/2 top-full h-full -translate-x-1/2 -translate-y-full object-cover grayscale filter"
+    <Skill
+      className="left-1/2 top-full h-full -translate-x-1/2 -translate-y-full object-cover opacity-100 grayscale filter"
       src="/me.png"
-      alt=""
-    />
-    <img
-      class="absolute h-24 w-24 -translate-y-5 translate-x-14 -rotate-12"
-      src="brands/html.svg"
-      alt=""
-    />
-    <img
-      class="absolute right-16 top-10 h-24 w-24 -rotate-6"
-      src="brands/css.svg"
-      alt=""
-    />
-    <img
-      class="absolute right-0 top-1/2 h-20 w-20 rotate-12"
-      src="brands/js.svg"
-      alt=""
+      alt="Raymundo Chavez"
     />
 
-    <img
-      class="absolute top-full h-24 w-24 -translate-y-full translate-x-14 rotate-6"
+    <Skill
+      className="h-24 w-24 -translate-y-5 translate-x-14 -rotate-12"
+      src="brands/html.svg"
+      alt="Logo de HTML"
+    />
+
+    <Skill
+      className="right-16 top-10 h-24 w-24 -rotate-6"
+      src="brands/css.svg"
+      alt="Logo de CSS"
+    />
+
+    <Skill
+      className="right-0 top-1/2 h-20 w-20 rotate-12"
+      src="brands/js.svg"
+      alt="Logo de JavaScript"
+    />
+
+    <Skill
+      className="top-full h-24 w-24 -translate-y-full translate-x-14 rotate-6"
       src="brands/react.svg"
-      alt=""
+      alt="Logo de React"
     />
-    <img
-      class="absolute top-1/2 h-24 w-24 -translate-y-1/2 -rotate-12"
+
+    <Skill
+      className="top-1/2 h-24 w-24 -translate-y-1/2 -rotate-12"
       src="brands/git.svg"
-      alt=""
+      alt="Logo de Git"
     />
-    <img
-      class="absolute bottom-0 right-14 h-24 w-24 rotate-12"
+    <Skill
+      className="bottom-0 right-14 h-24 w-24 rotate-12"
       src="brands/php.svg"
-      alt=""
+      alt="Logo de PHP"
     />
   </div>
 </div>

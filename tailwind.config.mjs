@@ -15,6 +15,16 @@ export default {
       backgroundImage: {
         grid: 'linear-gradient(#000 1px, transparent 1px),linear-gradient(90deg, #000 1px, transparent 1px)',
       },
+      keyframes: {
+        show: {
+          to: {
+            opacity: '1',
+          },
+        },
+      },
+      animation: {
+        show: 'show .5s .2s forwards',
+      },
     },
   },
   plugins: [],
