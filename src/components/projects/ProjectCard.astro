@@ -4,7 +4,7 @@ import Eye from '../../icons/Eye.astro'
 import Github from '../../icons/Github.astro'
 import ProjectBtn from './ProjectBtn.astro'
 
-const { title, description, img, tags } = Astro.props
+const { title, description, img, tags, url, git } = Astro.props
 const arrayTags = tags.split(' ')
 ---
 
@@ -31,12 +31,12 @@ const arrayTags = tags.split(' ')
   >
     <ProjectBtn
       colors=" bg-blue-400 transition-colors hover:bg-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700"
-      ><Eye w="20" h="20" />Ver</ProjectBtn
+      url={url}><Eye w="20" h="20" />Ver</ProjectBtn
     >
 
     <ProjectBtn
       colors="bg-slate-400 transition-colors hover:bg-slate-300 dark:bg-slate-600 dark:hover:bg-slate-700"
-      ><Github w="20" h="20" />Github</ProjectBtn
+      git={git}><Github w="20" h="20" />Github</ProjectBtn
     >
   </div>
 </article>

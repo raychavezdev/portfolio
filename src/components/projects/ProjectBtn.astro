@@ -1,9 +1,10 @@
 ---
-const { colors } = Astro.props
+const { colors, url, git } = Astro.props
 ---
 
 <a
-  href="#"
+  href={!url ? git : url}
+  target="_blank"
   class=`${colors} flex items-center justify-center gap-1 rounded-lg py-1 px-2 text-sm `
 >
   <slot />
