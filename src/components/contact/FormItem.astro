@@ -10,7 +10,7 @@ const commonStyles =
     <div class="relative flex flex-1 flex-col">
       <input
         type={type}
-        id={forHTML}
+        id={`${forHTML}`}
         class={` ${commonStyles}`}
         placeholder=""
       />
@@ -19,7 +19,7 @@ const commonStyles =
   ) : (
     <div class="relative flex flex-1 flex-col">
       <textarea
-        id={forHTML}
+        id={`${forHTML}`}
         class={`h-32 resize-none ${commonStyles}`}
         placeholder=""
       />
