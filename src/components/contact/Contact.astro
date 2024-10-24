@@ -9,7 +9,7 @@ import Social from './Social.astro'
 ---
 
 <section id="contact">
-  <SubTitle> <Mail /> Contactame </SubTitle>
+  <SubTitle><Mail /> Contactame</SubTitle>
   <p class="text-sm">
     Gracias por visitar mi portfolio. Si tienes alguna idea, proyecto o
     simplemente quieres saludar, no dudes en contactarme.
@@ -30,59 +30,65 @@ import Social from './Social.astro'
   </div>
   <div id="status-message"></div>
   <footer class="mt-8 border-t border-t-gray-300 text-gray-300">
-    <ul
-      class="class= flex justify-center gap-6 pt-4 text-gray-900 dark:text-gray-300"
-    >
+    <ul class="flex justify-center gap-6 pt-4 text-gray-900 dark:text-gray-300">
       <Social>
-        <a href="https://www.linkedin.com/in/raymundo-chavez/" target="_blank"
-          ><Linkedin w="35" h="35" /></a
-        >
+        <a href="https://www.linkedin.com/in/raymundo-chavez/" target="_blank">
+          <Linkedin w="35" h="35" />
+        </a>
       </Social>
       <Social>
         <a href="https://github.com/raychavezdev" target="_blank">
-          <Github w="35" h="35" /></a
-        >
+          <Github w="35" h="35" />
+        </a>
       </Social>
       <Social>
-        <a href="https://www.instagram.com/raymundo_developer/" target="_blank"
-          ><Instagram w="35" h="35" /></a
-        >
+        <a href="https://www.instagram.com/raymundo_developer/" target="_blank">
+          <Instagram w="35" h="35" />
+        </a>
       </Social>
     </ul>
   </footer>
 </section>
 
 <script>
-  import emailjs from '@emailjs/browser'
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  import emailjs, { EmailJSResponseStatus } from '@emailjs/browser'
   const form = document.getElementById('form')
   const statusMessage = document.getElementById('status-message')
-  form?.addEventListener('submit', (e) => {
+
+  form?.addEventListener('submit', async (e) => {
     e.preventDefault()
+
     const name = (document.getElementById('name') as HTMLInputElement).value
     const email = (document.getElementById('email') as HTMLInputElement).value
     const message = (document.getElementById('message') as HTMLInputElement)
       .value
+
     const templateParams = {
       from_name: name,
       from_email: email,
       message,
     }
 
-    emailjs
-      .send('service_q4kpsuo', 'template_fkgqlar', templateParams, {
-        publicKey: 'yNgHYMaxRhDzmzRZR',
-      })
-      .then((res) => {
-        console.log(res.status)
-        if (statusMessage) {
-          statusMessage.innerText = 'Eviado exitosamente'
-        }
-      })
-      .catch((err) => {
-        console.log(err)
-        if (statusMessage) {
-          statusMessage.innerText = 'Ha ocurrido un problema'
-        }
-      })
+    try {
+      const res: EmailJSResponseStatus = await emailjs.send(
+        'service_q4kpsuo',
+        'template_fkgqlar',
+        templateParams,
+        {
+          publicKey: 'yNgHYMaxRhDzmzRZR',
+        },
+      )
+      console.log(res.status)
+      if (statusMessage) {
+        statusMessage.innerText = 'Enviado exitosamente'
+      }
+    } catch (err) {
+      console.error(err)
+      if (statusMessage) {
+        statusMessage.innerText = 'Ha ocurrido un problema'
+      }
+    }
   })
 </script>
