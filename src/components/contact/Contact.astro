@@ -28,7 +28,11 @@ import Social from './Social.astro'
       >
     </form>
   </div>
-  <div id="status-message"></div>
+  <div
+    id="status-message"
+    class="mt-4 hidden rounded-md p-3 text-gray-950 dark:text-gray-200"
+  >
+  </div>
   <footer class="mt-8 border-t border-t-gray-300 text-gray-300">
     <ul class="flex justify-center gap-6 pt-4 text-gray-900 dark:text-gray-300">
       <Social>
@@ -56,14 +60,59 @@ import Social from './Social.astro'
   import emailjs, { EmailJSResponseStatus } from '@emailjs/browser'
   const form = document.getElementById('form')
   const statusMessage = document.getElementById('status-message')
+  const colorStatusWaiting =
+    'bg-zinc-300 bg-gradient-to-br from-zinc-300 to-zinc-200 shadow-sm shadow-gray-400 dark:bg-zinc-800 dark:bg-gradient-to-br dark:from-zinc-600 dark:to-zinc-900/50 dark:shadow-gray-800'
+  const colorStatusOk = 'bg-green-500/40'
+  const colorStatusError = 'bg-red-500/40'
+  const regexEmail = /^[\w.-]+@[\w-]+\.[\w]{2,4}$/
 
+  // Form event
   form?.addEventListener('submit', async (e) => {
     e.preventDefault()
 
+    // get values
     const name = (document.getElementById('name') as HTMLInputElement).value
     const email = (document.getElementById('email') as HTMLInputElement).value
     const message = (document.getElementById('message') as HTMLInputElement)
       .value
+
+    if (statusMessage) {
+      statusMessage.innerHTML = ''
+      statusMessage.className =
+        'mt-4 hidden rounded-md p-3 text-gray-950 dark:text-gray-200'
+    }
+
+    let flagError = false
+    let warnings = ''
+
+    if (name.length < 3) {
+      flagError = true
+      warnings += `Nombre no válido <br>`
+    }
+    if (!regexEmail.test(email)) {
+      flagError = true
+      warnings += `Email no válido <br>`
+    }
+    if (message.length < 4) {
+      flagError = true
+      warnings += `Mensaje no válido <br>`
+    }
+
+    if (flagError) {
+      if (statusMessage) {
+        statusMessage?.classList.remove('hidden')
+        statusMessage?.classList.add(...colorStatusError.split(' '))
+        statusMessage.innerHTML = warnings
+      }
+      return
+    }
+
+    // show status waiting
+    if (statusMessage) {
+      statusMessage?.classList.remove('hidden')
+      statusMessage?.classList.add(...colorStatusWaiting.split(' '))
+      statusMessage.innerText = 'Enviando tu mensaje, por favor espera...'
+    }
 
     const templateParams = {
       from_name: name,
@@ -71,6 +120,7 @@ import Social from './Social.astro'
       message,
     }
 
+    // try to send email
     try {
       const res: EmailJSResponseStatus = await emailjs.send(
         'service_q4kpsuo',
@@ -80,14 +130,26 @@ import Social from './Social.astro'
           publicKey: 'yNgHYMaxRhDzmzRZR',
         },
       )
-      console.log(res.status)
-      if (statusMessage) {
-        statusMessage.innerText = 'Enviado exitosamente'
+
+      if (res.status === 200) {
+        if (statusMessage) {
+          statusMessage?.classList.remove(...colorStatusWaiting.split(' '))
+          statusMessage?.classList.add(...colorStatusOk.split(' '))
+          statusMessage.innerText = '¡Mensaje enviado exitosamente!'
+          setTimeout(() => {
+            statusMessage?.classList.add('hidden')
+          }, 3000)
+        }
       }
     } catch (err) {
       console.error(err)
       if (statusMessage) {
-        statusMessage.innerText = 'Ha ocurrido un problema'
+        statusMessage?.classList.remove(...colorStatusWaiting.split(' '))
+        statusMessage?.classList.add(...colorStatusError.split(' '))
+        statusMessage.innerText = 'Ha ocurrido un problema al enviar tu mensaje'
+        setTimeout(() => {
+          statusMessage?.classList.add('hidden')
+        }, 3000)
       }
     }
   })
