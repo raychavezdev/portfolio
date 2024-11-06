@@ -1,0 +1,8 @@
+---
+const { tec, logo } = Astro.props
+---
+
+<div class="flex flex-col items-center p-4 text-sm">
+  <img class="w-2/3 lg:w-full" src={logo} alt={`Logo de ${tec}`} />
+  <span class="mt-1">{tec}</span>
+</div>

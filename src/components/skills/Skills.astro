@@ -1,0 +1,24 @@
+---
+import SkillItem from './SkillItem.astro'
+import SkillsIcon from '../../icons/SkillsIcon.astro'
+
+const SKILLS = [
+  { tec: 'HTML', logo: './brands/html.svg' },
+  { tec: 'CSS', logo: './brands/css.svg' },
+  { tec: 'JavaScript', logo: './brands/js.svg' },
+  { tec: 'React', logo: './brands/react.svg' },
+  { tec: 'Astro', logo: './brands/astro.svg' },
+  { tec: 'TailwindCSS', logo: './brands/tailwind.svg' },
+  { tec: 'NodeJS', logo: './brands/node.svg' },
+  { tec: 'MongoDB', logo: './brands/mongodb.svg' },
+]
+---
+
+<h3
+  class="mb-4 mt-8 flex items-center gap-2 border-t border-black pl-2 pt-4 text-xl dark:border-blue-300"
+>
+  <SkillsIcon /> Habilidades
+</h3>
+<div class="mt-4 grid grid-cols-4 gap-4 md:gap-2 lg:grid-cols-8">
+  {SKILLS.map((skill) => <SkillItem {...skill} />)}
+</div>
