@@ -1,7 +1,6 @@
----
-import Code from '../../icons/Code.astro'
-import ProjectCard from './ProjectCard.astro'
-import SubTitle from '../SubTitle.astro'
+import Code from '../../icons/Code'
+import ProjectCard from './ProjectCard'
+import SubTitle from '../SubTitle'
 
 const PROJECTS = [
   {
@@ -41,13 +40,20 @@ const PROJECTS = [
     git: 'https://github.com/raychavezdev/hangman',
   },
 ]
----
 
-<section id="projects">
-  <SubTitle>
-    <Code />Proyectos
-  </SubTitle>
-  <div class="grid gap-8 lg:grid-cols-2">
-    {PROJECTS.map((project) => <ProjectCard {...project} />)}
-  </div>
-</section>
+const ProjectsSection = () => {
+  return (
+    <section id="projects">
+      <SubTitle>
+        <Code /> Proyectos
+      </SubTitle>
+      <div className="grid gap-8 lg:grid-cols-2">
+        {PROJECTS.map((project, index) => (
+          <ProjectCard key={index} {...project} />
+        ))}
+      </div>
+    </section>
+  )
+}
+
+export default ProjectsSection
