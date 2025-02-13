@@ -13,3 +13,4 @@ Bienvenido a mi portfolio web. Aquí puedes explorar mis proyectos, habilidades 
 - **Astro**
 - **Tailwind**
 - **JavaScript**
+- **React**
